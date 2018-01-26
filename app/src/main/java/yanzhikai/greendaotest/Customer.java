@@ -63,6 +63,10 @@ public class Customer {
         this.tag = tag;
     }
 
+    public void insertOrder(Order order){
+        daoSession.insert(order);
+    }
+
     /**
      * To-many relationship, resolved on first access (and after reset).
      * Changes to to-many relations are not persisted, make changes to the target entity.

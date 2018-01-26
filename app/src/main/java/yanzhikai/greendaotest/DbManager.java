@@ -18,7 +18,6 @@ import java.util.List;
  */
 
 public class DbManager {
-    public static final String TAG = "yjkLocalAudioDaoManager";
     private static final String DB_NAME = "CAO";
     private volatile static DbManager mManager = new DbManager();
     private static DaoMaster sDaoMaster;
@@ -54,17 +53,7 @@ public class DbManager {
         return sDaoSession;
     }
 
-    /**
-     * 打开输出日志，默认关闭
-     */
-    public void setDebug(){
-        QueryBuilder.LOG_SQL = true;
-        QueryBuilder.LOG_VALUES = true;
-    }
 
-    /**
-     * 关闭所有的操作，数据库开启后，使用完毕要关闭
-     */
     public void closeConnection(){
         closeHelper();
         closeDaoSession();

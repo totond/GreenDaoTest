@@ -25,11 +25,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void insert(){
         Order newOrder = new Order();
-        newOrder.setCustomerTag("customer1");
+        newOrder.setCustomerTag(getCustomer1().getTag());
         newOrder.setDate(""+System.currentTimeMillis());
-        newOrder.setId(1L);
+        newOrder.setId(getCustomer1().getId());
         getCustomer1().getOrders().add(newOrder);
         getCustomer1().update();
+        getCustomer1().insertOrder(newOrder);
         Log.d(TAG, "insert: ");
     }
 
